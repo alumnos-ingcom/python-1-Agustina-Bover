@@ -15,6 +15,9 @@ def convertir_fahrrenheit (centigrados):
     Esta funcion se encarga de convertir una temperatura
     de grados centigrados a grados fahrentheit
     """
+    if centigrados <-273.15:
+        resultado="No existe temperatura"
+        return resultado
     resultado= (centigrados*9/5)+32
     return resultado
 
@@ -23,6 +26,9 @@ def convertir_centigrados (fahrenheit):
     Esta funcion se encarga de convertir una temperatura
     de grados fahrentheit a grados centigrados
     """
+    if fahrenheit <-459.67:
+        resultado="No existe temperatura"
+        return resultado
     resultado= (fahrenheit-32)*5/9
     return round ((resultado),2)
 
