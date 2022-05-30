@@ -8,7 +8,7 @@
 Escribir una función que indique con True si un número entero
 es multiplo de otro, utilizando sumas y restas.
 '''
-def multiplo (numero, multiplo):
+def es_multiplo (numero, multiplo):
     '''
     Esta funcion define si dos numeros son multiples
     '''
@@ -32,6 +32,6 @@ def principal():
     print ("Ingresar dos numeros enteros:")
     nro1=int(input('nro1--> '))
     nro2=int(input('nro2--> '))
-    print(f'{nro2} es multiplo de {nro1}? {multiplo(nro1,nro2)}')
+    print(f'{nro2} es multiplo de {nro1}? {es_multiplo(nro1,nro2)}')
 if __name__ =='__main__':
     principal ()

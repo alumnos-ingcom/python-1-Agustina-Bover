@@ -9,7 +9,7 @@ que estan en la carpeta "src".
 import pytest
 from src.ejercicio1 import convertir_fahrrenheit, convertir_centigrados
 
-def test_convertir_fahrrenheit():
+def test_convertir_fahrrenheit_positivo():
     """
     Prueba la funcion si se le ingresa un numero entero positivo
     """
@@ -18,7 +18,7 @@ def test_convertir_fahrrenheit():
     assert isinstance(resultado,float), "El resultado debe ser un numero decimal"
     assert resultado>0,"El resultado debe ser mayor que cero"
     assert resultado==68.0, "No se obtiene el resultado esperado"
-def test_convertir_fahrrenheit():
+def test_convertir_fahrrenheit_negativo():
     """
     Prueba la funcion si se le ingresa un numero entero negativo
     """
@@ -27,7 +27,7 @@ def test_convertir_fahrrenheit():
     assert isinstance(resultado,float), "El resultado debe ser un numero decimal"
     assert resultado<0,"El resultado debe ser menor que cero"
     assert resultado==-4.0, "No se obtiene el resultado esperado"
-def test_convertir_fahrrenheit():
+def test_convertir_fahrrenheit_erroneo():
     """
     Prueba la funcion si se le ingresa un numero menor a -273.15
     """
@@ -35,7 +35,7 @@ def test_convertir_fahrrenheit():
     resultado= convertir_fahrrenheit(numero)
     assert isinstance(resultado,str), "El resultado debe ser una cadena"
     assert resultado=="No existe temperatura" , "No se obtiene el resultado esperado"
-def test_convertir_centigrados():
+def test_convertir_centigrados_positivo():
     """
     Prueba la funcion si se le ingresa un numero entero positivo
     """
@@ -44,7 +44,7 @@ def test_convertir_centigrados():
     assert  isinstance(resultado, float), "El resultado debe ser un numero decimal"
     assert resultado>0,"El resultado debe ser mayor que cero"
     assert resultado==54.44, "No se obtiene el resultado esperado"
-def test_convertir_centigrados():
+def test_convertir_centigrados_negativo():
     """
     Prueba la funcion si se le ingresa un numero entero negativo
     """
@@ -53,7 +53,7 @@ def test_convertir_centigrados():
     assert  isinstance(resultado, float), "El resultado debe ser un numero decimal"
     assert resultado<0,"El resultado debe ser menor que cero"
     assert resultado==-28.89, "No se obtiene el resultado esperado"
-def test_convertir_centigrados():
+def test_convertir_centigrados_erroneo():
     """
     Prueba la funcion si se le ingresa un numero menor a -459.67
     """
