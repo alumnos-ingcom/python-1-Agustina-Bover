@@ -37,4 +37,4 @@ def test_comparar_igual():
     nro2=3
     resultado= comparar(nro1,nro2)
     assert isinstance (resultado, int), "El resultado debe ser un numero entero"
-    assert resultado==0, "No se obtiene el resultado esperado"   
+    assert resultado==0, "No se obtiene el resultado esperado"
