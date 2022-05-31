@@ -14,7 +14,7 @@ def es_multiplo (numero, multiplo):
     '''
     valor=False
     resultado=0
-    while valor==False:
+    while valor is False:
         numero=numero-multiplo
         if numero==0:
             resultado=1
