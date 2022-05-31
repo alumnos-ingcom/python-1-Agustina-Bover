@@ -28,7 +28,7 @@ def test_suma_lenta_negativos():
     assert isinstance  (resultado,int), "El resultado debe ser un numero entero"
     assert resultado==-11, "No se obtiene el resultado esperado"
     assert resultado<=nro1, "No se obtiene el resultado esperado"
-def test_suma_lenta_Mezclado1():
+def test_suma_lenta_Mezclado_uno():
     '''
     Comprueba la fundion en el caso de que el primer nro sea negativo
     y el otro positivo
@@ -39,7 +39,7 @@ def test_suma_lenta_Mezclado1():
     assert isinstance  (resultado,int), "El resultado debe ser un numero entero"
     assert resultado==1, "No se obtiene el resultado esperado"
     assert resultado>=nro1, "No se obtiene el resultado esperado"
-def test_suma_lenta_Mezclado2():
+def test_suma_lenta_Mezclado_dos():
     '''
     Comprueba la fundion en el caso de que el primer nro sea positivo
     y el otro negativo

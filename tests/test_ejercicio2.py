@@ -13,22 +13,22 @@ def test_signo_positivo():
     Se prueba la funcion ingresando un numero entero positivo
     """
     numero=4
-    resultado="El numero es Positivo"
+    resultado=signo(numero)
     assert isinstance(resultado,str),"El resultado debe ser un numero decimal"
-    assert resultado=="El numero es Positivo", "No se obtiene el resultado esperado"
+    assert resultado=="Positivo", "No se obtiene el resultado esperado"
 def test_signo_negativo():
     """
     Se prueba la funcion ingresando un numero entero negativo
     """
     numero=-4
-    resultado="El numero es Negativo"
+    resultado=signo(numero)
     assert isinstance(resultado,str),"El resultado debe ser un numero decimal"
-    assert resultado=="El numero es Negativo", "No se obtiene el resultado esperado"
+    assert resultado=="Negativo", "No se obtiene el resultado esperado"
 def test_signo_cero():
     """
     Se prueba la funcion ingresando cero
     """
     numero=0
-    resultado="El numero es Cero"
+    resultado=signo(numero)
     assert isinstance(resultado,str),"El resultado debe ser un numero decimal"
-    assert resultado=="El numero es Cero", "No se obtiene el resultado esperado"
+    assert resultado=="Cero", "No se obtiene el resultado esperado"

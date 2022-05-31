@@ -17,12 +17,10 @@ def es_primo (numero):
         if numero%suma==0:
             contador+=1
             break
-        else:
-            suma=suma+1
+        suma=suma+1
     if contador==1:
         return False
-    else:
-        return True
+    return True
 def principal():
     """
      Esta función es la que se encarga de la parte 'interactiva' del ejercicio

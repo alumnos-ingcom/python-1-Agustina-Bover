@@ -15,17 +15,15 @@ def palindromo (palabra):
     '''
     lista=list(palabra)
     lista2=lista[::-1]#Invierte la lista.
-    resultado=' '
     if lista==lista2:
         return True
-    else:
-        return False
+    return False
 def principal():
     """
      Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     """
     palabra=input('Ingrese una palabra--> ')
     palabra=palabra.lower()
-    print (f' La palabra es un palindromo? {palindromo(palabra)}')
+    print (f'La palabra es un palindromo? {palindromo(palabra)}')
 if __name__ =='__main__':
     principal ()

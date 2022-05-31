@@ -17,7 +17,7 @@ def test_es_multiplo_si():
     nro2=2
     resultado=es_multiplo(nro1,nro2)
     assert isinstance(resultado, bool), "El resultado debe ser un valor booleano"
-    assert resultado==True, "No se obtiene el resultado esperado"
+    assert resultado is True, "No se obtiene el resultado esperado"
     assert nro1>0 and nro2>0, "Los numeros deben ser positivos"
 def test_es_multiplo_no():
     """
@@ -28,5 +28,5 @@ def test_es_multiplo_no():
     nro2=6
     resultado=es_multiplo(nro1,nro2)
     assert isinstance(resultado, bool), "El resultado debe ser un valor booleano"
-    assert resultado==False, "No se obtiene el resultado esperado"
+    assert resultado is False, "No se obtiene el resultado esperado"
     assert nro1>0 and nro2>0, "Los numeros deben ser positivos"

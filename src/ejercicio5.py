@@ -13,12 +13,12 @@ def division_lenta(dividendo, divisor):
     """
     Esta funcion, a traves de restas, nos devuelve el resto de la division
     """
-    Resto=dividendo
-    Cociente=0
-    while Resto>=divisor:
-        Resto-=divisor
-        Cociente+=1
-    return Cociente, Resto
+    resto=dividendo
+    cociente=0
+    while resto>=divisor:
+        resto-=divisor
+        cociente+=1
+    return cociente, resto
 def principal ():
     """
      Esta función es la que se encarga de la parte 'interactiva' del ejercicio
