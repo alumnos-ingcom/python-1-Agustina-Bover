@@ -16,7 +16,7 @@ def test_es_primo_primo():
     numero=3
     resultado=es_primo(numero)
     assert isinstance(resultado, bool),"El resultado debe ser un booleano"
-    assert resultado==True, "No se obtiene el resultado esperado"
+    assert resultado is True, "No se obtiene el resultado esperado"
     assert numero>0, "No se ingreso un numero positivo"
 def test_es_primo_no_primo():
     """
@@ -26,5 +26,5 @@ def test_es_primo_no_primo():
     numero=6
     resultado=es_primo(numero)
     assert isinstance(resultado, bool),"El resultado debe ser un booleano"
-    assert resultado==False, "No se obtiene el resultado esperado"
+    assert resultado is False, "No se obtiene el resultado esperado"
     assert numero>0, "No se ingreso un numero positivo"
