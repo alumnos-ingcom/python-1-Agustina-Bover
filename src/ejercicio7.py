@@ -33,18 +33,16 @@ def principal():
     """
     print ("Pasaje de sexadecimal a decimal:")
     print('' '')
-    horas= int(input('Ingrese horas->'))
-    minutos= int(input('Ingrese minutos->'))
-    if minutos>=60:
-        print('Error volver a intentar')
-    else:
-        segundos= int(input('Ingrese segundos->'))
-        if segundos > 60:
-            print('Error volver a intentar')
+    horas= int(input('Ingrese horas (numeros naturales)->'))
+    minutos= int(input('Ingrese minutos->((numeros naturales))'))
+    assert minutos <60, "Error, 60 minutos o + ya son considerados horas"
+    segundos= int(input('Ingrese segundos(numeros naturales)->'))
+    assert segundos <60, "Error, 60 segundos o + ya son considerados minutos"
     print (f'La cantidad de segundos es: {sexadecimal_a_decimal(horas, minutos, segundos)}')
     print('' '')
     print ("Pasaje de decimal a sexadecimal:")
-    numero=int(input('ingrese un numero: '))
+    numero=int(input('ingrese un numero natural: '))
+    assert numero>0, "Debe ingresar un numero nartural"
     print (f'La cantidad de horas, minutos y segundos son: {decimal_a_sexadecimal(numero)}')
 if __name__ =='__main__':
     principal ()

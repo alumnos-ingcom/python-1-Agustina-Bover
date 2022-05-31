@@ -17,10 +17,9 @@ def palindromo (palabra):
     lista2=lista[::-1]#Invierte la lista.
     resultado=' '
     if lista==lista2:
-        resultado='True'
+        return True
     else:
-        resultado='False'
-    return resultado
+        return False
 def principal():
     """
      Esta función es la que se encarga de la parte 'interactiva' del ejercicio

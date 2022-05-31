@@ -27,7 +27,8 @@ def principal():
     """
      Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     """
-    nro= int(input("Ingrese numero entero "))
+    nro= int(input("Ingrese numero entero positivo "))
+    assert nro>0, "No ingreso un numero positivo"
     print(es_primo(nro))
 if __name__ =='__main__':
     principal ()

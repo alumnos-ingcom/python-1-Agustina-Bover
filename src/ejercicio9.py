@@ -24,6 +24,7 @@ def principal():
      Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     """
     nro=int(input('Ingrese numero entero positivo-->'))
+    assert nro>0, "Se ingreso un nro negativo"
     print (f' Sus factores primos son: {factores_primos(nro)}')
 if __name__ =='__main__':
     principal ()
