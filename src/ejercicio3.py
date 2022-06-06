@@ -30,6 +30,8 @@ def principal ():
     print ("Ingrese dos numeros enteros")
     nro1=int(input('--> nro1: '))
     nro2=int(input('--> nro2: '))
-    print (f' Resultado: {comparar(nro1, nro2)}')
+    resultado=comparar(nro1, nro2)
+    print ('Recuerde\n-1--> nro1<nro2\n 0--> nro1=nro2\n 1-->nro1>nro2')
+    print (f' Resultado: {resultado}')
 if __name__ =='__main__':
     principal ()

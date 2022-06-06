@@ -35,6 +35,7 @@ def principal():
     print ("Ingrese dos numeros enteros")
     nro1=int(input('--> nro1: '))
     nro2=int(input('--> nro2: '))
-    print (f'El resultado es: {suma_lenta(nro1, nro2)}')
+    resultado=suma_lenta(nro1, nro2)
+    print (f'El resultado es:{resultado}')
 if __name__ =='__main__':
     principal ()

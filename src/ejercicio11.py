@@ -14,7 +14,7 @@ def es_multiplo (numero, multiplo):
     '''
     valor=False
     resultado=0
-    while valor is False:
+    while not valor:
         numero=numero-multiplo
         if numero==0:
             resultado=1
@@ -33,6 +33,7 @@ def principal():
     nro1=int(input('nro1--> '))
     nro2=int(input('nro2--> '))
     assert nro1>0 and nro2>0, "Se deben ingresar numeros positivos"
-    print(f'{nro2} es multiplo de {nro1}? {es_multiplo(nro1,nro2)}')
+    resultado=es_multiplo(nro1,nro2)
+    print(f'{nro2} es multiplo de {nro1}? {resultado}')
 if __name__ =='__main__':
     principal ()

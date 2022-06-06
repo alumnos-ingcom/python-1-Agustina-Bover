@@ -84,7 +84,9 @@ def principal ():
     nro1=int(input('--> nro1: '))
     nro2=int(input('--> nro2: '))
     nro3=int(input('--> nro3: '))
-    print (f'El orden de mayor a menor es {ordenar_mayor_a_menor(nro1, nro2, nro3)}')
-    print (f'El orden de menor a mayor es {ordenar_menor_a_mayor(nro1, nro2, nro3)}')
+    resultado1=ordenar_mayor_a_menor(nro1, nro2, nro3)
+    resultado2=ordenar_menor_a_mayor(nro1, nro2, nro3)
+    print (f'El orden de mayor a menor es {resultado1}')
+    print (f'El orden de menor a mayor es {resultado2}')
 if __name__ =='__main__':
     principal ()

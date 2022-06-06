@@ -17,7 +17,7 @@ def test_es_primo_primo():
     resultado=es_primo(numero)
     assert isinstance(resultado, bool),"El resultado debe ser un booleano"
     assert resultado is True, "No se obtiene el resultado esperado"
-    assert numero>0, "No se ingreso un numero positivo"
+    assert numero!=0, "Se debe ingresar un nro distinde de 0"
 def test_es_primo_no_primo():
     """
     Esta funcion comprueba el funcionamiento de la misma si se ingresa
@@ -27,4 +27,12 @@ def test_es_primo_no_primo():
     resultado=es_primo(numero)
     assert isinstance(resultado, bool),"El resultado debe ser un booleano"
     assert resultado is False, "No se obtiene el resultado esperado"
-    assert numero>0, "No se ingreso un numero positivo"
+    assert numero!=0, "Se debe ingresar un nro distinde de 0"
+def test_es_primo_negativo_compuesto():
+    numero=-9
+    resultado=es_primo(numero)
+    assert isinstance (resultado,bool),"El resultado debe ser un booleano"
+    assert resultado is False,"No se obtiene el resultado esperado" 
+    assert numero!=0, "Se debe ingresar un nro distinde de 0"
+
+    

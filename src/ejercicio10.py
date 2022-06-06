@@ -9,13 +9,16 @@ Escribir una función que indique con True si una palabra o frase
 ingresada se trata de un palindromo. Palíndromo, es si se lee
 igual de derecha a izquierda que de izquierda a derecha.
 '''
-def palindromo (palabra):
+def es_palindromo (palabra):
     '''
     Esta funcion determina si las palabras son consideradas palindromos
     '''
-    lista=list(palabra)
-    lista2=lista[::-1]#Invierte la lista.
-    if lista==lista2:
+    invertida=''
+    i=len(palabra)
+    while i>0:
+        invertida+=palabra[i-1]
+        i=i-1
+    if invertida==palabra:
         return True
     return False
 def principal():
@@ -24,6 +27,7 @@ def principal():
     """
     palabra=input('Ingrese una palabra--> ')
     palabra=palabra.lower()
-    print (f'La palabra es un palindromo? {palindromo(palabra)}')
+    resultado=es_palindromo(palabra)
+    print (f'La palabra es un palindromo? {resultado}')
 if __name__ =='__main__':
     principal ()

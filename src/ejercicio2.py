@@ -6,20 +6,18 @@
 ########
 """
 Escribir una función que reciba un número e indique si el mismo es positivo,
-negativo o cero utilizando sumas y restas.
+negativo o cero utilizando sumas y restas. 
 """
 def signo (numero):
     """
     Esta funcion define el signo del numero
     """
-    estado=""
     if numero==0:
-        estado='Cero'
+        return 0
     elif numero+abs(numero)==0:
-        estado="Negativo"
+        return -1
     elif numero-abs(numero)==0:
-        estado="Positivo"
-    return estado
+        return 1
 
 def principal ():
     """
@@ -27,7 +25,9 @@ def principal ():
     """
     print ("Ingrese un numero")
     numero=int (input('--> numero: '))
-    print (f' El numero es {signo(numero)}')
+    print("Recuerde\n 0--> Cero\n 1--> Positivo\n-1--> Negativo") 
+    resultado=signo(numero)
+    print(f'El resultado es {resultado}')
 
 if __name__ =='__main__':
     principal ()

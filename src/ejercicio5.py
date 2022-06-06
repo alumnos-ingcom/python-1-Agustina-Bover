@@ -13,19 +13,48 @@ def division_lenta(dividendo, divisor):
     """
     Esta funcion, a traves de restas, nos devuelve el resto de la division
     """
-    resto=dividendo
-    cociente=0
-    while resto>=divisor:
-        resto-=divisor
-        cociente+=1
-    return cociente, resto
+    if dividendo>0 and divisor>0:
+        resto=dividendo
+        cociente=0
+        while resto>=divisor:
+            resto-=divisor
+            cociente+=1
+        return cociente, resto
+    if dividendo>0 and divisor<0:
+        resto=dividendo
+        cociente=0
+        while resto>=abs(divisor):
+            resto+=divisor
+            cociente-=1
+        return cociente, resto
+    if dividendo<0 and divisor>0:
+        resto=dividendo
+        cociente=0
+        while resto<=(divisor*-1):
+            resto+=divisor
+            cociente-=1
+        return cociente, resto
+    if dividendo<0 and divisor<0:
+        resto=dividendo
+        cociente=0
+        while resto<=divisor:
+            resto-=divisor
+            cociente+=1
+        return cociente, resto
+      
 def principal ():
     """
      Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     """
-    print ("Ingrese dos numeros enteros positivos")
+    print ("Ingrese dos numeros enteros")
     nro1=int(input('--> nro1: '))
     nro2=int(input('--> nro2: '))
-    print (f'El cociente y resto es: {division_lenta(nro1,nro2)}')
+    try:
+        assert nro2!=0, 'No es posible dividir por 0'
+        resultado=division_lenta(nro1,nro2)
+        print (f'El cociente y resto es: {resultado}')
+    except:
+        print ('No es posible dividir por 0')
+        principal()
 if __name__ =='__main__':
     principal ()
