@@ -11,25 +11,24 @@ def factores_primos (numero):
     '''
     Esta funcion determina los factores primos de un numero
     '''
-    primos=[]
-    for num in range (2, numero+1):
-        while numero%num==0:
-            primos.append(num)
-            numero=numero/num
-    tupla=tuple(primos)
-    return tupla
+    if numero<0:
+        resultado='Ingreso un numero invalido, recuerde que debe ser positivo. Intente de nuevo'
+    else:
+        primos=[]
+        for num in range (2, numero+1):
+            while numero%num==0:
+                primos.append(num)
+                numero=numero/num
+        tupla=tuple(primos)
+        resultado=tupla
+    return resultado
 
 def principal():
     """
      Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     """
     nro=int(input('Ingrese numero entero positivo-->'))
-    try:
-        assert nro>0
-        resultado=factores_primos(nro)
-        print (f'Sus factores primos son: {resultado}')
-    except AssertionError as exc:
-        print ('Debe ingresar un numero positivo')
-        principal()
+    resultado=factores_primos(nro)
+    print (f'Sus factores primos son: {resultado}')
 if __name__ =='__main__':
     principal ()

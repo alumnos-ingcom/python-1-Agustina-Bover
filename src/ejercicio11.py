@@ -12,18 +12,21 @@ def es_multiplo (numero, multiplo):
     '''
     Esta funcion define si dos numeros son multiples
     '''
-    valor=False
-    resultado=0
-    while not valor:
-        numero=numero-multiplo
-        if numero==0:
-            resultado=1
-        if resultado>0:
-            valor=True
-        else:
-            valor=False
-            if numero<0:
-                break
+    if numero<0 or multiplo<0:
+        valor="Se deben ingresar numeros positivos. Intente nuevamente"
+    else:
+        valor=False
+        resultado=0
+        while not valor:
+            numero=numero-multiplo
+            if numero==0:
+                resultado=1
+            if resultado>0:
+                valor=True
+            else:
+                valor=False
+                if numero<0:
+                    break
     return valor
 def principal():
     """
@@ -32,7 +35,6 @@ def principal():
     print ("Ingresar dos numeros enteros positivos:")
     nro1=int(input('nro1--> '))
     nro2=int(input('nro2--> '))
-    assert nro1>0 and nro2>0, "Se deben ingresar numeros positivos"
     resultado=es_multiplo(nro1,nro2)
     print(f'{nro2} es multiplo de {nro1}? {resultado}')
 if __name__ =='__main__':

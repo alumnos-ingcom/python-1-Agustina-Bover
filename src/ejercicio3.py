@@ -15,10 +15,9 @@ def comparar (numero1, numero2):
     Esta variable compara ambos numeros y dedtermina cual es mayor
     o si son iguales
     """
-    valor=0
     if numero1-numero2==0:
-        return valor
-    if numero1-numero2>0:
+        valor=0
+    elif numero1-numero2>0:
         valor=1
     else:
         valor=-1

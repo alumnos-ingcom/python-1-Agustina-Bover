@@ -16,11 +16,13 @@ def es_palindromo (palabra):
     invertida=''
     i=len(palabra)
     while i>0:
-        invertida+=palabra[i-1]
+        invertida=invertida+palabra[i-1]
         i=i-1
     if invertida==palabra:
-        return True
-    return False
+        resultado=True
+    else:
+        resultado=False
+    return resultado
 def principal():
     """
      Esta función es la que se encarga de la parte 'interactiva' del ejercicio

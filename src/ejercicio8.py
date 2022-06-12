@@ -11,28 +11,30 @@ def es_primo (numero):
     '''
     Esta funcion determina si el numero es primo o no
     '''
+    if numero==0:
+        resultado="0 no es ni primo ni compuesto"
     if numero>0:
         suma=2
         while suma<numero:
             if numero%suma==0:
-                return False
+                resultado= False
                 break
-            suma=suma+1   
-        return True
-    else:
+            suma=suma+1
+            resultado= True
+    if numero<0:
         suma=2
         while suma>numero:
             if numero%suma==0:
-                return False
+                resultado= False
                 break
             suma=suma+1
-        return True
+            resultado= True
+    return resultado
 def principal():
     """
      Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     """
     nro= int(input("Ingrese numero entero "))
-    assert nro!=0, "0 no es ni primo ni compuesto"
     resultado=es_primo(nro)
     print(f'Recuerde:\n True= es primo\n False= no es primo\n Resultado-->{resultado}')
 if __name__ =='__main__':

@@ -16,21 +16,33 @@ def sexadecimal_a_decimal (horas,minutos,segundos):
     '''
     Esta funcion pasa un numero de notacion sexadecimal a decimal
     '''
-    suma_de_horas_y_minutos=(((horas*60)+minutos)*60)
-    segundos_totales=(suma_de_horas_y_minutos + segundos)
-    return segundos_totales  
+    if minutos>60 or segundos>60:
+        resultado='Ingreso erroneo, intente de nuevo'
+    elif horas<0 or minutos<0 or segundos<0:
+        resultado='Ingreso erroneo, intente de nuevo'
+    else:
+        suma_de_horas_y_minutos=(((horas*60)+minutos)*60)
+        segundos_totales=(suma_de_horas_y_minutos + segundos)
+        resultado=segundos_totales
+    return resultado
 
 def decimal_a_sexadecimal(numero):
-    segundos=(numero%60)
-    minutos=((numero//60)%60)
-    horas=(((numero//60)//60)%60)
-    tupla=(horas, minutos, segundos)
-    return tupla
+    '''
+    Esta funcion pasa un numero de notacion decimal a sexadecimal
+    '''
+    if numero<0:
+        resultado='Ingreso erroneo, intente de nuevo'
+    else:
+        segundos=(numero%60)
+        minutos=((numero//60)%60)
+        horas=(((numero//60)//60)%60)
+        tupla=(horas, minutos, segundos)
+        resultado=tupla
+    return resultado
 def principal():
     """
      Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     """
-    print('')
     print ("Pasaje de sexadecimal a decimal:")
     horas= int(input('Ingrese horas (numeros naturales)->'))
     minutos= int(input('Ingrese minutos->((numeros naturales))'))
@@ -38,20 +50,11 @@ def principal():
     print('')
     print ("Pasaje de decimal a sexadecimal:")
     numero=int(input('ingrese un numero natural: '))
-    try:
-        assert minutos<60 and segundos<60
-        assert numero>0
-        resultado=sexadecimal_a_decimal(horas, minutos, segundos)    
-        print ('')
-        print (f'{horas} horas, {minutos} minutos, {segundos} segundos son: {resultado} segundos')
-        resultado2=decimal_a_sexadecimal(numero)
-        print (f'{numero} es {resultado2} horas, minutos y segundos')    
-    except AssertionError as exc:
-        print('')
-        print('Error, recuerde que 60 minutos o + ya son considerados horas,')
-        print('y 60 segundos o + ya son considerados minutos.')
-        print('Ademas debe ingresar un decimal positivo')
-        principal()
-      
+    resultado=sexadecimal_a_decimal(horas, minutos, segundos)
+    print ('')
+    print (f'La conversion a segundos es: {resultado}')
+    resultado2=decimal_a_sexadecimal(numero)
+    print (f'La conversion a horas, minutos y segundos es:{resultado2}')
+
 if __name__ =='__main__':
     principal ()

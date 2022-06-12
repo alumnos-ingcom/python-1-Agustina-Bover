@@ -15,7 +15,7 @@ def ordenar_mayor_a_menor(uno,dos,tres):
     mayor=0
     menor=0
     medio=0
-    if dos<uno>tres:
+    if dos<uno and uno>tres:
         if dos>tres:
             medio=dos
             menor=tres
@@ -24,15 +24,15 @@ def ordenar_mayor_a_menor(uno,dos,tres):
             medio=tres
             menor=dos
             mayor=uno
-    if dos<uno<tres:
+    if dos<uno and uno<tres:
         mayor=tres
         medio=uno
         menor=dos
-    if dos>uno>tres:
+    if dos>uno and uno>tres:
         mayor=dos
         medio=uno
         menor=tres
-    if dos>uno<tres:
+    if dos>uno and uno<tres:
         menor=uno
         if dos>tres:
             mayor=dos
@@ -49,7 +49,7 @@ def ordenar_menor_a_mayor(uno,dos,tres):
     mayor=0
     menor=0
     medio=0
-    if dos<uno>tres:
+    if dos<uno and uno>tres:
         if dos>tres:
             medio=dos
             menor=tres
@@ -58,15 +58,15 @@ def ordenar_menor_a_mayor(uno,dos,tres):
             medio=tres
             menor=dos
             mayor=uno
-    if dos<uno<tres:
+    if dos<uno and uno<tres:
         mayor=tres
         medio=uno
         menor=dos
-    if dos>uno>tres:
+    if dos>uno and uno>tres:
         mayor=dos
         medio=uno
         menor=tres
-    if dos>uno<tres:
+    if dos>uno and uno<tres:
         menor=uno
         if dos>tres:
             mayor=dos
