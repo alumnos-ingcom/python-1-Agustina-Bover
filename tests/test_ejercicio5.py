@@ -118,3 +118,4 @@ def test_division_lenta_ambos_negativos_con_cociente():
     resultado=division_lenta(nro1,nro2)
     assert isinstance(resultado,tuple),'El resultado debe ser una tupla'
     assert resultado==(0,-8),'No se obtiene el resultado esperado'
+

@@ -15,23 +15,19 @@ def convertir_a_fahrrenheit (centigrados):
     Esta funcion se encarga de convertir una temperatura
     de grados centigrados a grados fahrentheit
     """
-    if centigrados<-273.5:
-        resultado= (f"{centigrados} es menor al cero absoluto(-273.5). Intente de nuevo ")
-    else:
-        resultado= (centigrados*9/5)+32
+    resultado = (centigrados*9/5)+32
     return resultado
 
+    
 
 def convertir_a_centigrados (fahrenheit):
     """
     Esta funcion se encarga de convertir una temperatura
     de grados fahrentheit a grados centigrados
     """
-    if fahrenheit<-459.67:
-        resultado= (f"{fahrenheit} es menor al cero absoluto(-459.67). Intente de nuevo ")
-    else:
-        resultado= (fahrenheit-32)*5/9
+    resultado= (fahrenheit-32)*5/9
     return resultado
+    
 
 def principal ():
     """
@@ -42,8 +38,8 @@ def principal ():
     grados_fahrenheit=float(input(' --> Ingrese grados fahrenheit: '))
     conversion0=convertir_a_fahrrenheit(grados_centigrados)
     conversion1=convertir_a_centigrados(grados_fahrenheit)
-    print (f'La conversion a fahrrenheit es: {conversion0}')
-    print (f'La conversion a grados es: {conversion1}')
+    print(f'La conversion a grados fahrrenheit es: {conversion0}')
+    print (f'La conversion a grados centigraods es: {conversion1}')
 
 if __name__ =='__main__':
     principal ()

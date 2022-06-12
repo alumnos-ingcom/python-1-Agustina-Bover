@@ -16,7 +16,6 @@ def test_decimal_a_sexadecimal():
     resultado=decimal_a_sexadecimal(numero)
     assert isinstance(resultado, tuple), "El resultado debe ser Una tupla"
     assert resultado==(0,5,0), "No se obtiene el resultado esperado"
-    assert numero>0, "No se ingreso un numero natural"
 def test_sexadecimal_a_decimal():
     """
     Esta funcion comprueba el buen funcionamiento del pasaje a decimal
@@ -27,5 +26,4 @@ def test_sexadecimal_a_decimal():
     resultado=sexadecimal_a_decimal(horas,minutos,segundos)
     assert isinstance(resultado, int), "El resultado debe ser un numero entero"
     assert resultado==18182, "No se obtiene el resultado esperado"
-    assert horas>=0 and minutos>=0 and segundos>=0, "No se ingreso un numero natural"
-    assert minutos<60 and segundos<60, "Mal definido minutos o segundos"
+

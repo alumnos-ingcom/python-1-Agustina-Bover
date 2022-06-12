@@ -17,9 +17,11 @@ def sexadecimal_a_decimal (horas,minutos,segundos):
     Esta funcion pasa un numero de notacion sexadecimal a decimal
     '''
     if minutos>60 or segundos>60:
-        resultado='Ingreso erroneo, intente de nuevo'
+        print('Ingreso erroneo de minutos o segundos, intente de nuevo.')
+        resultado=000
     elif horas<0 or minutos<0 or segundos<0:
-        resultado='Ingreso erroneo, intente de nuevo'
+        print('Ingreso erroneo de minutos o segundos, intente de nuevo')
+        resultado=000
     else:
         suma_de_horas_y_minutos=(((horas*60)+minutos)*60)
         segundos_totales=(suma_de_horas_y_minutos + segundos)
@@ -31,7 +33,8 @@ def decimal_a_sexadecimal(numero):
     Esta funcion pasa un numero de notacion decimal a sexadecimal
     '''
     if numero<0:
-        resultado='Ingreso erroneo, intente de nuevo'
+        print('Ingreso erroneo del decimal, intente de nuevo')
+        resultado=(0,0,0)
     else:
         segundos=(numero%60)
         minutos=((numero//60)%60)
@@ -47,12 +50,12 @@ def principal():
     horas= int(input('Ingrese horas (numeros naturales)->'))
     minutos= int(input('Ingrese minutos->((numeros naturales))'))
     segundos= int(input('Ingrese segundos(numeros naturales)->'))
-    print('')
     print ("Pasaje de decimal a sexadecimal:")
     numero=int(input('ingrese un numero natural: '))
+    print("")
     resultado=sexadecimal_a_decimal(horas, minutos, segundos)
-    print ('')
     print (f'La conversion a segundos es: {resultado}')
+    print("")
     resultado2=decimal_a_sexadecimal(numero)
     print (f'La conversion a horas, minutos y segundos es:{resultado2}')
 

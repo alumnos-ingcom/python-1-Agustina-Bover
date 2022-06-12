@@ -13,9 +13,8 @@ def division_lenta(dividendo, divisor):
     """
     Esta funcion, a traves de restas, nos devuelve el resto de la division
     """
-    if divisor==0:
-        resultado=('No es posible dividir por 0. Intente de nuevo')
-    else:
+    try:
+        chek=dividendo/divisor
         if dividendo==0:
             cociente=0
             resto=0
@@ -48,7 +47,10 @@ def division_lenta(dividendo, divisor):
                 resto-=divisor
                 cociente+=1
             resultado=(cociente,resto)
-    return resultado
+        return resultado
+    except ZeroDivisionError as exc:
+        raise ZeroDivisionError("El divisor no puede ser cero")
+    
   
 def principal ():
     """
@@ -61,4 +63,4 @@ def principal ():
     print (f'El cociente y resto es: {resultado}')
 
 if __name__ =='__main__':
-    principal ()
+    principal()

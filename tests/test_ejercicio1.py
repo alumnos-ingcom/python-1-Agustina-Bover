@@ -45,3 +45,4 @@ def test_convertir_a_centigrados_negativo():
     assert  isinstance(resultado, float), "El resultado debe ser un numero decimal"
     assert resultado<0,"El resultado debe ser menor que cero"
     assert resultado==-28.88888888888889, "No se obtiene el resultado esperado"
+
