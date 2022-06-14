@@ -19,7 +19,7 @@ class CeroAbsolutoException(Exception):
 
 def convertir_a_fahrrenheit (centigrados):
     """
-    Esta funcion se encarga de convertir una temperatura
+    Esta funcion se  encarga de convertir una temperatura
     de grados centigrados a grados fahrentheit. En el caso de que la temperatura sea menor
     al cero absoluto el programa parará
     """
