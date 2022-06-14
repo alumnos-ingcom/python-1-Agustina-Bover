@@ -10,27 +10,34 @@ Escribir las funciones para convertir la temperatura en grados centigrados en fa
 como un número decimal,utilice esta formula para calcular los grados centígrados y retorne
 el resultado obtenido. Y viceversa.
 """
+class CeroAbsolutoException(Exception):
+    '''
+    Esta excepcion esta creada para el caso de que el usuario ingrese un valor menor
+    al cero absoluto. (-273.5 en grados centigrados y -459.67 en grados fahrrenheit)
+    '''
+    pass
+
 def convertir_a_fahrrenheit (centigrados):
     """
     Esta funcion se encarga de convertir una temperatura
-    de grados centigrados a grados fahrentheit
+    de grados centigrados a grados fahrentheit. En el caso de que la temperatura sea menor
+    al cero absoluto el programa parará
     """
     if centigrados<-273.5:
-        resultado= (f"{centigrados} es menor al cero absoluto(-273.5). Intente de nuevo ")
-    else:
-        resultado= (centigrados*9/5)+32
+        raise CeroAbsolutoException ('Los grados centigrados ingresados son menor al cero absoluto(-273.5). Intente de nuevo')
+    resultado= (centigrados*9/5)+32
     return resultado
 
 
 def convertir_a_centigrados (fahrenheit):
     """
     Esta funcion se encarga de convertir una temperatura
-    de grados fahrentheit a grados centigrados
+    de grados fahrentheit a grados centigrados. En el caso de que la temperatura sea menor
+    al cero absoluto el programa parará
     """
     if fahrenheit<-459.67:
-        resultado= (f"{fahrenheit} es menor al cero absoluto(-459.67). Intente de nuevo ")
-    else:
-        resultado= (fahrenheit-32)*5/9
+        raise CeroAbsolutoException ('Los grados fahrenheit ingresados son menor al cero absoluto(-459.67). Intente de nuevo')
+    resultado= (fahrenheit-32)*5/9
     return resultado
 
 def principal ():

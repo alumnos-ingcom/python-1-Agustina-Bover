@@ -7,12 +7,19 @@
 '''
 Escribir una función que indique con True si un numero indicado es Primo.
 '''
+class ZeroPrimoException(Exception):
+    '''
+    Esta excepcion fue creada en caso de que el usuario ingrese 0. Esto es debido a que
+    el cero no es primo ni compuesto
+    '''
+    pass
 def es_primo (numero):
     '''
-    Esta funcion determina si el numero es primo o no
+    Esta funcion determina si el numero es primo o no.
+    En caso de ingresar 0 se interrumpira la ejecucion del programa
     '''
     if numero==0:
-        resultado="0 no es ni primo ni compuesto"
+        raise ZeroPrimoException("0 no es ni primo ni compuesto")
     if numero>0:
         suma=2
         while suma<numero:

@@ -18,11 +18,8 @@ def es_palindromo (palabra):
     while i>0:
         invertida=invertida+palabra[i-1]
         i=i-1
-    if invertida==palabra:
-        resultado=True
-    else:
-        resultado=False
-    return resultado
+    return invertida==palabra
+
 def principal():
     """
      Esta función es la que se encarga de la parte 'interactiva' del ejercicio

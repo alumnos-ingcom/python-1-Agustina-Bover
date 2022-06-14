@@ -10,15 +10,52 @@ es multiplo de otro, utilizando sumas y restas.
 '''
 def es_multiplo (numero, multiplo):
     '''
-    Esta funcion define si dos numeros son multiples
+    Esta funcion define si dos numeros son multiples. Ya sean positivos o negativos
     '''
-    if numero<0 or multiplo<0:
-        valor="Se deben ingresar numeros positivos. Intente nuevamente"
-    else:
+    if numero>0 and multiplo>0:
         valor=False
         resultado=0
         while not valor:
             numero=numero-multiplo
+            if numero==0:
+                resultado=1
+            if resultado>0:
+                valor=True
+            else:
+                valor=False
+                if numero<0:
+                    break
+    elif numero<0 and multiplo<0:
+        valor=False
+        resultado=0
+        while not valor:
+            numero=numero-multiplo
+            if numero==0:
+                resultado=1
+            if resultado>0:
+                valor=True
+            else:
+                valor=False
+                if numero>0:
+                    break
+    elif numero<0 and multiplo>0:
+        valor=False
+        resultado=0
+        while not valor:
+            numero=numero+multiplo
+            if numero==0:
+                resultado=1
+            if resultado>0:
+                valor=True
+            else:
+                valor=False
+                if numero>0:
+                    break
+    elif numero>0 and multiplo<0:
+        valor=False
+        resultado=0
+        while not valor:
+            numero=numero+multiplo
             if numero==0:
                 resultado=1
             if resultado>0:
@@ -32,7 +69,7 @@ def principal():
     """
      Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     """
-    print ("Ingresar dos numeros enteros positivos:")
+    print ("Ingresar dos numeros enteros:")
     nro1=int(input('nro1--> '))
     nro2=int(input('nro2--> '))
     resultado=es_multiplo(nro1,nro2)

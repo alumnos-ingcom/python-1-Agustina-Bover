@@ -11,27 +11,37 @@ expresado en grados, minutos y segundos a segundos a segundos.
 Y otra que haga el cambio en el sentido contrario, devolviendo una tuple.
 Recuerden que un grado son 60 minutos y un minuto son 60 segundos.
 '''
-
+class FechaException(Exception):
+    '''
+    Esta excepcion fue creada para controlar el buen ingreso de las variables.
+    No se podran ingresar nros negativos, segundos>60 o minutos>60
+    '''
+    pass
 def sexadecimal_a_decimal (horas,minutos,segundos):
     '''
-    Esta funcion pasa un numero de notacion sexadecimal a decimal
+    Esta funcion pasa un numero de notacion sexadecimal a decimal.
+    En el caso de que el usuario ingrese un valor de manera erronea
+    se interrumpira el programa
     '''
-    if minutos>60 or segundos>60:
-        resultado='Ingreso erroneo, intente de nuevo'
+    if minutos>60:
+        raise FechaException ('Minutos sobrepasan su limite (60)')
+    elif segundos>60:
+        raise FechaException ('Segundos sobrepasan su limite (60)')
     elif horas<0 or minutos<0 or segundos<0:
-        resultado='Ingreso erroneo, intente de nuevo'
-    else:
-        suma_de_horas_y_minutos=(((horas*60)+minutos)*60)
-        segundos_totales=(suma_de_horas_y_minutos + segundos)
-        resultado=segundos_totales
+        raise FechaException ('Todos los numeros ingresados deberan ser positivos')
+    suma_de_horas_y_minutos=(((horas*60)+minutos)*60)
+    segundos_totales=(suma_de_horas_y_minutos + segundos)
+    resultado=segundos_totales
     return resultado
 
 def decimal_a_sexadecimal(numero):
     '''
-    Esta funcion pasa un numero de notacion decimal a sexadecimal
+    Esta funcion pasa un numero de notacion decimal a sexadecimal.
+    En el caso de que el usuario ingrese un valor de manera erronea
+    se interrumpira el programa
     '''
     if numero<0:
-        resultado='Ingreso erroneo, intente de nuevo'
+        raise FechaException ('El numero decimal ingresado debera ser positivos')
     else:
         segundos=(numero%60)
         minutos=((numero//60)%60)

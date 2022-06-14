@@ -11,45 +11,45 @@ valor del cociente y resto de dos números enteros.
 """
 def division_lenta(dividendo, divisor):
     """
-    Esta funcion, a traves de restas, nos devuelve el resto de la division
+    Esta funcion, a traves de restas, nos devuelve el resto de la division. Si el divisior ingresado
+    es igual a cero se vera interrumpida la ejecucion del programa
     """
     if divisor==0:
-        resultado=('No es posible dividir por 0. Intente de nuevo')
-    else:
-        if dividendo==0:
-            cociente=0
-            resto=0
-            resultado=(cociente,resto)
-        if dividendo>0 and divisor>0:
-            resto=dividendo
-            cociente=0
-            while resto>=divisor:
-                resto-=divisor
-                cociente+=1
-            resultado=(cociente,resto)
-        if dividendo>0 and divisor<0:
-            resto=dividendo
-            cociente=0
-            while resto>=abs(divisor):
-                resto+=divisor
-                cociente-=1
-            resultado=(cociente,resto)
-        if dividendo<0 and divisor>0:
-            resto=dividendo
-            cociente=0
-            while resto<=(divisor*-1):
-                resto+=divisor
-                cociente-=1
-            resultado=(cociente,resto)
-        if dividendo<0 and divisor<0:
-            resto=dividendo
-            cociente=0
-            while resto<=divisor:
-                resto-=divisor
-                cociente+=1
-            resultado=(cociente,resto)
+        raise ZeroDivisionError ('No es posible dividir por 0. Intente de nuevo')
+    if dividendo==0:
+        cociente=0
+        resto=0
+        resultado=(cociente,resto)
+    if dividendo>0 and divisor>0:
+        resto=dividendo
+        cociente=0
+        while resto>=divisor:
+            resto-=divisor
+            cociente+=1
+        resultado=(cociente,resto)
+    if dividendo>0 and divisor<0:
+        resto=dividendo
+        cociente=0
+        while resto>=abs(divisor):
+            resto+=divisor
+            cociente-=1
+        resultado=(cociente,resto)
+    if dividendo<0 and divisor>0:
+        resto=dividendo
+        cociente=0
+        while resto<=(divisor*-1):
+            resto+=divisor
+            cociente-=1
+        resultado=(cociente,resto)
+    if dividendo<0 and divisor<0:
+        resto=dividendo
+        cociente=0
+        while resto<=divisor:
+            resto-=divisor
+            cociente+=1
+        resultado=(cociente,resto)
     return resultado
-  
+
 def principal ():
     """
      Esta función es la que se encarga de la parte 'interactiva' del ejercicio
